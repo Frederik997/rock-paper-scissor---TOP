@@ -87,16 +87,19 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+
 
 function playGame() {
-    let total = computerScore + humanScore
-    if (total < 5){
+    let rounds = 0
+    while (rounds < 5){
+
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
         playRound(humanSelection, computerSelection)
-    }else{
-        console.log("Game end!")
+        rounds ++
     }
+
 }
+
 
 playGame()
